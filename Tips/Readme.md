@@ -41,3 +41,6 @@
 |[Get Code of Objects](TSql/GetCodeObjects.md)|Query to get the code of views, functions..|
 |[Product of sequence](TSql/ProductSequence.md)|A way to obtain an aggregation where the item are multiplication|
 |[Binary, Decimal, Hexadecimal conversion](TSql/ConversionDecimalBinaryHex.md)|Functions to convert Decimal, Binary, Hexadecimal number among them|
+|||
+|**SSAS**|
+|[Tabular To Muldimensional](SSAS/ChangeEngineMultidimensionaleToTabular.md)|Steps to Change SSAS Engine from Tabular To Muldimensional|
