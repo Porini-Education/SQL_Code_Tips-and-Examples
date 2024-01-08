@@ -6,7 +6,7 @@
 |[Table of Numbers](Utility/TableOfNumbers.md)|Creation of a Table of Numbers|
 |[Get Internal Unique Record ID](Utility/GetInternalRecordId.md)|Use of undocumented functions **%%physloc%%**  and **sys.fn_PhysLocFormatter** to get the ID of a record.Useful to remove duplicate records.|
 |**INSTANCE**|
-|[Info Instance](Instance/Info_Istance.md)|Get the information about instance|
+|[Info Instance](Instance/Info_Instance.md)|Get the information about instance|
 |[Active Sessions](Instance/Active_Sessions.sql)|Allow you to describe the active session, and transaction, on a specific database or on the instance|
 |[Activity TempDB](Instance/Activity_TempDB.sql)|Activity on the database TempDB|
 |[Alter TempDB](Instance/Alter_TempDB.sql)|How to alter the database TempDB|
