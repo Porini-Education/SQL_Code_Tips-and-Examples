@@ -1,4 +1,4 @@
-# Getting last activity on database's tables
+# Getting last activity for all database's tables
 
 ``` SQL
 SELECT 

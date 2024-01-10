@@ -32,6 +32,7 @@
 |[Table Sizes](Tables/Info_Tables_Size.sql)|Returns, for each table, the number of rows, the occupied and allocated space and the date of the last scan, seek, lookup and update operation|
 |[Partitioned Tables](Tables/Info_PartitionTables.md)|Returns a list of all the partitioned tables in the queried database|
 |[Last Acitivity Tables](Tables/LastTableActivity.md)|Returns the date time of last activity for each tables of the database using **sys.dm_db_index_usage_stats**|
+|[Rename Tables](Tables/RenameTables.md)|Script to rename a list of tables|
 |||
 |**SECURITY**||
 |[Info Users and Logins](Security/InfoUserLogins.md)|List of Logins and Users in a SQL Server instance|
