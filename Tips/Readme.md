@@ -31,7 +31,7 @@
 |[Database Columns](Tables/Dizionario_colonne.sql)|Returns the attributes of each field of the database tables|
 |[Table Sizes](Tables/Info_Tables_Size.sql)|Returns, for each table, the number of rows, the occupied and allocated space and the date of the last scan, seek, lookup and update operation|
 |[Compressed Tables](Tables/Info_PatitionTables.md)|Returns a list with all the compressed tables in the queried database|
-|[Last Acitivity Tables](Tables/Last_TableActivity.md)|Returns the date time of last activity for each tables of the database using **sys.dm_db_index_usage_stats**|
+|[Last Acitivity Tables](Tables/LastTableActivity.md)|Returns the date time of last activity for each tables of the database using **sys.dm_db_index_usage_stats**|
 |||
 |**SECURITY**||
 |[Info Users and Logins](Security/InfoUserLogins.md)|List of Logins and Users in a SQL Server instance|
