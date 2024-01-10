@@ -1,25 +1,27 @@
-/*
-	Table partitioning
-	https://docs.microsoft.com/en-us/sql/relational-databases/partitions/create-partitioned-tables-and-indexes?view=sql-server-ver15
+# Table Partition Example
 
-	Remark: partitions can be applied on the same filegroup.
-			partitions are extremely helpfull whenever you need to provide massive deletes.
-			Having more filegroups provide higher level of tidiness
+<https://docs.microsoft.com/en-us/sql/relational-databases/partitions/create-partitioned-tables-and-indexes>
 
-	Example of partitioning to use the SWITCH IN / SWITCH ON
-*/
+Remark:
 
+- partitions can be applied on the same filegroup.
+- partitions are extremely helpfull whenever you need to provide massive deletes.
+- Having more filegroups provide higher level of tidiness
+
+## Set up enviroment and setting partition
+
+``` SQL
 USE master
 GO
 
 IF EXISTS (select * from sys.databases where name = 'Test')
-	DROP DATABASE Test;
+ DROP DATABASE TestPartition;
 GO
 
-CREATE DATABASE Test;
+CREATE DATABASE TestPartition;
 GO
 
-USE Test
+USE TestPartition
 GO
 
 /* Partitioning using an integer */
@@ -30,28 +32,23 @@ AS RANGE RIGHT
 FOR VALUES (1, 2, 3, 4, 5, 6);
 go
 
-/*
-	Create the partitioning schema
-	 - describe the filegroups to be used
-	 - you have to provide the numer of values provided in the function plus one
-	 - in this example we are using a single filegroup
-*/
+
+- describe the filegroups to be used
 
 CREATE PARTITION SCHEME ps_T
 AS PARTITION pf_T
- TO ( [PRIMARY],[PRIMARY],[PRIMARY],[PRIMARY],[PRIMARY],[PRIMARY],[PRIMARY]);	-- 6 + 1
+ TO ( [PRIMARY],[PRIMARY],[PRIMARY],[PRIMARY],[PRIMARY],[PRIMARY],[PRIMARY]); - 6 + 1
 GO
 
 /*
-	Create the partitioned table declaring the partitioning schema and the attribute on which it should be applied.
-	In the current example the table is a HEAP.
-	If you create a CLUSTERED INDEX you have to partition it declaring the partitioning function.
+Create the partitioned table declaring the partitioning schema and the attribute on which it should be applied.
 */
 
 drop table if exists  dbo.PT
 GO
 create table dbo.PT (id int not null, t varchar(10)) on ps_T(id);
 GO
+
 -- create table dbo.PT_SwitchOUT (id int not null, t varchar(10));
 
 -- Example of partitioning on the clustered index:
@@ -69,33 +66,43 @@ GO
 
 select * from dbo.PT;
 GO
-	
+```
+
+## Checking partitions and using the partition's functions
+
+``` SQL
 /*
-	The function $partition.xxxx(y) - where xxxx is the name of the partitioning function - returns
-	the number of the partition associated to the given input y.
-	Let's try the function:
+The function $partition.xxxx(y) - where xxxx is the name of the partitioning function - returns
+the number of the partition associated to the given input y.
+Let's try the function:
 */
-select $partition.pf_T(-10);	-- 1: -10 is lower than the LimInf of the partition (RANGE RIGHT)
-select $partition.pf_T(0);		-- 1:as previously
-select $partition.pf_T(1);		-- 2
-select $partition.pf_T(2);		-- 3
-select $partition.pf_T(6);		-- 7: the last partition starts from 6
-select $partition.pf_T(70);		-- 7: all the values greater than 6 are in the last partition
+select $partition.pf_T(-10);    -- 1: -10 is lower than the LimInf of the partition (RANGE RIGHT)
+select $partition.pf_T(0);      -- 1:as previously
+select $partition.pf_T(1);      -- 2
+select $partition.pf_T(2);      -- 3
+select $partition.pf_T(6);      -- 7: the last partition starts from 6
+select $partition.pf_T(70);     -- 7: all the values greater than 6 are in the last partition
 
 -- The inserted values are in the partition defined from the partitioning function
 
 -- Number of records in each partition
 select 
-	Partition = $partition.pf_T(id)
-	,Nrec = count(*)
-	,minID = Min(id)
-	,maxID = Max(id)
+    Partition = $partition.pf_T(id),
+    Nrec = count(*),
+    minID = Min(id),
+    maxID = Max(id)
 from dbo.PT
-group by $partition.pf_T(id)
+group by $partition.pf_T(id);
 
--- delete all records in a partition
--- this is a very great feature because it doesn't fill up the LOG
+```
 
+![Alt text](../Assets/Partitions01.png)
+
+## Example of use of SWITCH IN / SWITCH ON
+
+If you have to delete all records in a partition, using this feature is very useful because it doesn't fill up the LOG.
+
+``` SQL
 -- I create a new table with the same schema to save the partition that I'm removing
 create table dbo.PT_Temp (id int not null, t varchar(10));
 
@@ -109,13 +116,17 @@ select * from dbo.PT;
 
 -- the partition number 2 doesn't exist anymore
 select 
-	$partition.pf_T(id) as Partizione,
-	count(*) as Nrec, 
-	Min (id) as MinimoId, 
-	Max(id) as MassimoId
+    $partition.pf_T(id) as Partizione,
+    count(*) as Nrec, 
+    Min (id) as MinimoId, 
+    Max(id) as MassimoId
 from dbo.PT
-group by $partition.pf_T(id)
+group by $partition.pf_T(id);
+```
 
+![Alt text](../Assets/Partitions02.png)
+
+``` SQL
 -- data can be moved from a table on a partitioned table
 -- Example: I edit records on pt_Temp and I moved them back in the partitioned table
 truncate table dbo.PT_Temp;
@@ -135,13 +146,21 @@ alter table dbo.PT_Temp switch  to dbo.PT partition 2
 select * from dbo.PT;
 
 select 
-	$partition.pf_T(id) as [Partition],
-	count(*) as Nrec, 
-	Min (id) as MinId, 
-	Max(id) as MaxId
+    $partition.pf_T(id) as [Partition],
+    count(*) as Nrec, 
+    Min (id) as MinId, 
+    Max(id) as MaxId
 from dbo.PT
 group by $partition.pf_T(id)
 ;
+
+```
+
+![Alt text](../Assets/Partitions03.png)
+
+## Modify number of partition
+
+``` SQL
 
 -- Add some partitions to host new records
 
@@ -164,7 +183,6 @@ select $partition.pf_T(5); -- partition 6
 select $partition.pf_T(6); -- partition 7
 select $partition.pf_T(7); -- partition 8
 select $partition.pf_T(8); -- partition 8
-
 
 -- with the MERGE statement we can group some partitions
 -- before
@@ -205,8 +223,13 @@ select $partition.pf_T(4); -- partition 3 (before 4)
 select $partition.pf_T(5); -- partition 4 (before 5)
 select $partition.pf_T(6); -- partition 5 (before 6)
 select $partition.pf_T(7); -- partition 6 (before 7)
+```
 
+## Truncate a partition and switch with no partition table
 
+Because a not partitioned table has anyway always the first partition, which contains all records
+
+``` SQL
 -- Second way to delete records from a partition
 select * from dbo.PT
 truncate table dbo.PT with (partitions (2 ));
@@ -225,10 +248,11 @@ alter table uno switch to due;
 
 select * from dbo.uno;
 select * from dbo.due;
+```
 
+## Partitioning on a date column
 
-/* Example: monthly partitioning on a date column */
-
+``` SQL
 -- Create the partitioning function
 CREATE PARTITION FUNCTION pf_D( date )
 AS RANGE RIGHT
@@ -256,10 +280,15 @@ insert into dbo.PD values
 GO
 
 select 
-	$partition.pf_D(giorno) as Partizione,
-	count(*) as Nrec, 
-	Min (giorno) as MinimoId, 
-	Max(giorno) as MassimoId
-from dbo.PD
-group by $partition.pf_D(giorno)
+    $partition.pf_D(giorno) as Partizione,
+    count(*) as Nrec, 
+    Min (giorno) as MinimoId, 
+    Max(giorno) as MassimoId
+from 
+    dbo.PD
+group by 
+    $partition.pf_D(giorno)
 ;
+```
+
+![Alt text](../Assets/Partitions04.png)
