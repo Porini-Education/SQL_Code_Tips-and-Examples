@@ -17,7 +17,7 @@ order by least(last_user_scan, last_user_seek,last_user_lookup,last_user_update)
 ## Getting the list of non used tables
 
 ``` SQL
-with ctelastAcivity
+with cteLastActivity
 as
 (
 SELECT 
@@ -41,7 +41,7 @@ select
     from sys.tables a
     inner join sys.schemas b
     on a.schema_id = b.schema_id
-    left outer join ctelastAcivity c
+    left outer join cteLastActivity c
     on a.object_id = c.object_id
     where c.object_id is null
 ;
