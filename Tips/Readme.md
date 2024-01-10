@@ -30,7 +30,7 @@
 |[Compressed Tables](Tables/Compressed_Tables.sql)|Returns a list with all the compressed tables in the queried database|
 |[Database Columns](Tables/Dizionario_colonne.sql)|Returns the attributes of each field of the database tables|
 |[Table Sizes](Tables/Info_Tables_Size.sql)|Returns, for each table, the number of rows, the occupied and allocated space and the date of the last scan, seek, lookup and update operation|
-|[Compressed Tables](Tables/Info_PatitionTables.md)|Returns a list with all the compressed tables in the queried database|
+|[Partitioned Tables](Tables/Info_PartitionTables.md)|Returns a list of all the partitioned tables in the queried database|
 |[Last Acitivity Tables](Tables/LastTableActivity.md)|Returns the date time of last activity for each tables of the database using **sys.dm_db_index_usage_stats**|
 |||
 |**SECURITY**||
