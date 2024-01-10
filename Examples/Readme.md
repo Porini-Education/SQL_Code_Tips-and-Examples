@@ -11,7 +11,7 @@
 |[Attach & Detach](Database/Example_Attach_Detach.sql)|Example of a detach and attach of a database from an instance to another|
 |[Manage Virtual LOG](Database/Example_manage_LOG_files_virtual.sql)|Example with documentation about how to manage the SQL Virtual LOG Files (VLF)|
 |[Multi LOG files](Database/Example_Management_LOG_files.sql)|Complete example to add and remove a new LOG file|
-|[Partitioning](Database/Example_Partitioning.sql)| Complete example of how to define and use the partitioning of a table|
+|[Table Partitioning](Database/Example_Partitioning.md)| Complete example of how to define and use the partitioning of a table|
 |[Change Tracking](Database/Example_ChangeTracking.md)|Example of of how to set and use the Change Tracking|
 |**QUERY and Functions**|
 |[MERGE](Query/DML_MERGE.sql)|Show a complete example of how to use the `MERGE` statement|
