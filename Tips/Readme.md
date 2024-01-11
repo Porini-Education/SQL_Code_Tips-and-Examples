@@ -17,6 +17,7 @@
 |[Mark a Procedure as System Procedure](Instance/CreateSystemProcedure.md)|A System Procedure could be execute in any databases.
 |[Performance counter](Instance/CrePerformance_counter_in_a_period.sql)|Performance counter in a period|
 |[Time to Optimize](Instance/Time_to_Optimize.sql)|Total amount of time spent in optimizing query since the instance restart|
+|[List Query Plan](Instance/QueryPlan.md)|List of Query Plans present in cache. using **sys.dm_exec_cached_plans** |
 |||
 |**DATABASE**|
 |[Info Databases](Database/Info_Database.sql)|Returns the attributes of all databases of the instance and the info about the last backup|
