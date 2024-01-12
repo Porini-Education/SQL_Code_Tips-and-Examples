@@ -35,6 +35,12 @@
 |[Last Acitivity Tables](Tables/LastTableActivity.md)|Returns the date time of last activity for each tables of the database using **sys.dm_db_index_usage_stats**|
 |[Rename Tables](Tables/RenameTables.md)|Script to rename a list of tables|
 |||
+|**INDEX**|
+|[Info Index](Index/Info_Index.md)|Returns the information about all Tables Indexes|
+|||
+|**COLUMNSTORE INDEX**|
+|[Info Rowstore](Index/Info_RowStoreGroups.md)|Returns the information about all Columnstore Index's Rowstore Groups Using **sys.dm_db_column_store_row_group_physical_stats**|
+|||
 |**SECURITY**||
 |[Info Users and Logins](Security/InfoUserLogins.md)|List of Logins and Users in a SQL Server instance|
 |[Create a Login on Azure SQL Database](Security/CreationNewLoginSQLAzure.md)|Example code to create Logins and Users on an Azure Sql Database|
