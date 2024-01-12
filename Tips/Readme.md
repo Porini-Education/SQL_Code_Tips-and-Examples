@@ -37,6 +37,7 @@
 |||
 |**INDEX**|
 |[Info Index](Index/Info_Index.md)|Returns the information about all Tables Indexes|
+|[Info Missing Index](Index/Info_MissingIndex.md)|Returns the information Missing Indexes using **sys.dm_db_missing_index_details**|
 |||
 |**COLUMNSTORE INDEX**|
 |[Info Rowstore](Index/Info_RowStoreGroups.md)|Returns the information about all Columnstore Index's Rowstore Groups Using **sys.dm_db_column_store_row_group_physical_stats**|

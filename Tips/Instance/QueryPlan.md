@@ -19,7 +19,7 @@ WHERE
     cp.cacheobjtype = 'Compiled Plan';
 ```
 
-<https://www.brentozar.com/blitzcache/multiple-plans/>
+Other info <https://www.brentozar.com/blitzcache/multiple-plans/>
 
 ## Same query with different execution plans
 
@@ -41,3 +41,18 @@ CROSS APPLY sys.dm_exec_query_plan(qs.plan_handle) AS qp
 WHERE PlanCount > 1
 ORDER BY q.PlanCount DESC
 ```
+
+
+In SQL Server, the data in the query cache (also known as the plan cache) can be erased or de-allocated for several reasons:
+
+1. **SQL Server Restart**: The entire cache is cleared when SQL Server is restarted.
+
+2. **Memory Pressure**: If the system is under memory pressure, SQL Server might decide to remove some plans from the cache to free up memory.
+
+3. **Database Changes**: Certain changes to a database can cause all plans for that database to be removed from the cache. This includes operations like ALTER DATABASE, DROP DATABASE, RESTORE DATABASE, etc.
+
+4. **Schema Changes**: Changes to the schema of a table, such as adding or dropping columns, can cause all plans involving that table to be removed from the cache.
+
+5. **Index Changes**: Changes to an index, such as creating, dropping, or rebuilding an index, can cause all plans involving that index to be removed from the cache.
+
+6. **Manual Clearing**: You can manually clear the cache using the DBCC FREEPROCCACHE command. Be careful with this command in a production environment, as it can cause a sudden CPU spike as SQL Server has to recompile plans that were removed from the cache.
