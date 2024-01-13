@@ -46,7 +46,7 @@ FETCH NEXT FROM rename_tables_cursor INTO @OldTableSchema, @OldTableName
 
 WHILE @@FETCH_STATUS = 0
 BEGIN
-	SET @FullOldTableName = @OldTableSchema + '.' + @OldTableName;
+    SET @FullOldTableName = @OldTableSchema + '.' + @OldTableName;
     SET @NewTableName =  @OldTableName + '_TOREMOVE';
     EXEC sp_rename @FullOldTableName, @NewTableName
 
