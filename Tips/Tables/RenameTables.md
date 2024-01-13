@@ -15,67 +15,45 @@ GO
 use testRename
 GO
 
+create schema s1;
+GO
+
 -- create test tables
 create table dbo.T1 (id int);
 GO
-create table dbo.T2 (id int);
+create table s1.T2 (id int);
 GO
 create table dbo.T3 (id int);
 GO
 
--- rename som table in *_TOBEDELETE
-DECLARE @OldTableName NVARCHAR(128), @NewTableName NVARCHAR(128)
+-- rename some table in *_TOBEDELETE
+DECLARE @OldTableSchema NVARCHAR(128);
+DECLARE @OldTableName NVARCHAR(128);
+DECLARE @FullOldTableName NVARCHAR(128);
+DECLARE @NewTableName NVARCHAR(128);
 
 DECLARE rename_tables_cursor CURSOR FOR 
-SELECT OldTableName
+SELECT OldTableSchema, OldTableName
 FROM (VALUES 
-    ('dbo.T1'),
-    ('dbo.T2')
+    ('dbo','T1'),
+    ('s1','T2')
 
-) AS T(OldTableName )
+) AS T(OldTableSchema,OldTableName )
 
 OPEN rename_tables_cursor
 
-FETCH NEXT FROM rename_tables_cursor INTO @OldTableName
+FETCH NEXT FROM rename_tables_cursor INTO @OldTableSchema, @OldTableName
 
 WHILE @@FETCH_STATUS = 0
 BEGIN
+	SET @FullOldTableName = @OldTableSchema + '.' + @OldTableName;
     SET @NewTableName =  @OldTableName + '_TOREMOVE';
-    EXEC sp_rename @OldTableName, @NewTableName
+    EXEC sp_rename @FullOldTableName, @NewTableName
 
-    FETCH NEXT FROM rename_tables_cursor INTO @OldTableName
+    FETCH NEXT FROM rename_tables_cursor INTO  @OldTableSchema, @OldTableName
 END
 
 CLOSE rename_tables_cursor
 DEALLOCATE rename_tables_cursor
 
-```
-
-## Example 2
-
-``` SQL
-
-DECLARE @OldTableName NVARCHAR(128), @NewTableName NVARCHAR(128)
-
-DECLARE rename_tables_cursor CURSOR FOR 
-SELECT OldTableName, NewTableName
-FROM (VALUES 
-    ('OldTable1', 'NewTable1'),
-    ('OldTable2', 'NewTable2'),
-    -- Add more tables to rename here
-) AS T(OldTableName, NewTableName)
-
-OPEN rename_tables_cursor
-
-FETCH NEXT FROM rename_tables_cursor INTO @OldTableName, @NewTableName
-
-WHILE @@FETCH_STATUS = 0
-BEGIN
-    EXEC sp_rename @OldTableName, @NewTableName
-
-    FETCH NEXT FROM rename_tables_cursor INTO @OldTableName, @NewTableName
-END
-
-CLOSE rename_tables_cursor
-DEALLOCATE rename_tables_cursor
 ```
