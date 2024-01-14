@@ -1,8 +1,8 @@
-/*
-	List of UserTable or View in a single database.
-	The following script can be executed also on Azure SQL Databases
-*/
+# List of Database's Objects
 
+The following script can be executed both on Premise and on Azure SQL Databases
+
+```SQL
 SELECT 
 	DateSample = getdate()
 	,InstanceName = COALESCE(SERVERPROPERTY('InstanceName'), 'Default Instance')
@@ -36,27 +36,35 @@ SELECT
 	,lob_data_space = lobds.name
 FROM 
 	sys.partitions p INNER JOIN sys.indexes i 
-										ON p.[object_id] = i.[object_id] 
-											and p.index_id = i.index_id
-	INNER JOIN sys.objects o			ON i.[object_id] = o.[object_id]
-	INNER JOIN sys.schemas s			ON o.[schema_id] = s.[schema_id]
-	INNER JOIN sys.data_spaces ds		ON i.data_space_id = ds.data_space_id
-	LEFT JOIN sys.partition_schemes ps	ON i.data_space_id = ps.data_space_id	
+	ON p.[object_id] = i.[object_id] 
+	   and p.index_id = i.index_id
+	INNER JOIN sys.objects o			
+		ON i.[object_id] = o.[object_id]
+	INNER JOIN sys.schemas s			
+		ON o.[schema_id] = s.[schema_id]
+	INNER JOIN sys.data_spaces ds		
+		ON i.data_space_id = ds.data_space_id
+	LEFT JOIN sys.partition_schemes ps	
+		ON i.data_space_id = ps.data_space_id	
 	LEFT JOIN sys.destination_data_spaces dds 
-										ON dds.partition_scheme_id = ps.data_space_id 
-											and p.partition_number = dds.destination_id
-	INNER JOIN sys.filegroups f			ON f.data_space_id = 
-												CASE WHEN ds.[type] <> 'PS' THEN ds.data_space_id 
-													ELSE dds.data_space_id 
-												END
+		ON dds.partition_scheme_id = ps.data_space_id 
+		   and p.partition_number = dds.destination_id
+	INNER JOIN sys.filegroups f			
+		ON f.data_space_id = CASE 
+			WHEN ds.[type] <> 'PS' THEN ds.data_space_id 
+			ELSE dds.data_space_id 
+		END
 	LEFT JOIN sys.tables t				ON o.[object_id] = t.[object_id]
 	LEFT JOIN sys.data_spaces lobds 	ON t.lob_data_space_id = lobds.data_space_id
 	INNER JOIN sys.allocation_units au 	ON p.partition_id = au.container_id
+
 --	LEFT OUTER JOIN sys.dm_db_index_physical_stats(db_id(),NULL,NULL,NULL,'LIMITED') ips
-										--ON i.object_id =ips.object_id
-										--	AND i.index_id = ips.index_id
-where
-	o.[type] IN ('U', 'V')
-ORDER BY	
-	o.[name];
+	--ON i.object_id =ips.object_id
+	--	 AND i.index_id = ips.index_id
+
+--WHERE o.[type] IN ('U', 'V') -- ==> TO GET ONLY User Tabkles and Views
+
+ORDER BY
+   o.[name];
 GO
+```
