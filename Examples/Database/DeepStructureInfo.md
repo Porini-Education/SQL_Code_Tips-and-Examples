@@ -6,4 +6,4 @@ To run the example is neened this objects
 
 [List Database Objects](../../Tips/Database/Info_Database_Object.md)
 
-[Rows Info](../../Tips/Utility/Row_Info.md)
+[Rows Info](../../Tips/Utility/RowInfo.md)
