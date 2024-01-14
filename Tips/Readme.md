@@ -41,7 +41,8 @@
 |[Info Indexes Usage](Index/Info_IndexUsage.md)|Returns info about indexes usage using **sys.dm_db_index_usage_stats**|
 |||
 |**COLUMNSTORE INDEX**|
-|[Info Rowstore](Index/Info_RowStoreGroups.md)|Returns the information about all Columnstore Index's Rowstore Groups Using **sys.dm_db_column_store_row_group_physical_stats**|
+|[Info Rowstore](Index/Info_ColumnStoreIndex.md)|Returns the information about a Index's Rowstore Groups|
+|[Info Rowstore Groups](Index/Info_RowStoreGroups.md)|Returns the information about all Columnstore Index's Rowstore Groups Using **sys.dm_db_column_store_row_group_physical_stats**|
 |||
 |**SECURITY**||
 |[Info Users and Logins](Security/InfoUserLogins.md)|List of Logins and Users in a SQL Server instance|
