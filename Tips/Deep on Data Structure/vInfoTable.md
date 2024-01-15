@@ -74,4 +74,5 @@ Example
 select * from util.vInfoTable where object_name ='Test01'; -- 1 Data Page, 7 rows
 ```
 
-![Alt text](../assets/DataStructure01.png)
+![Alt text](assets/DataStructure01.png)
+
