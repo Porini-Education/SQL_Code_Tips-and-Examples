@@ -21,10 +21,11 @@
 |||
 |**DATABASE**|
 |[Info Databases](Database/Info_Database.sql)|Returns the attributes of all databases of the instance and the info about the last backup|
-|[Info Database Object](Database/Info_Database_Object.md)|List of UserTable or View in a single database: on-prem and on-cloud|
 |[Info DB Files](Database/Info_DB_Files.sql)|It retrieves the features of the database in the current instance|
+|[Info Database Object](Database/Info_Database_Object.md)|List of UserTable or View in a single database|
+|[Last execution time of store procedures](Database/LastStoreProcedureExecution.md)|List of last store procedures's execution time|
+|[Database Backups History](Database/DatabaseBackupHistory.md)|List the times of all db's backups|
 |[Info Change Tracking](Database/Info_ChangeTraking.md)|Returns a row with the name of the database and the name of the table for all DBs and Tables with Change Tracking Enabled|
-|[Database Backups History](Database/DatabaseBackupHistory.md)|List the times of all db's backuops|
 |||
 |**TABLES**|
 |[Change Field Collate](Tables/Change_Field_Collate.sql)|Generate the scripts to alter the collation of columns in the database|
