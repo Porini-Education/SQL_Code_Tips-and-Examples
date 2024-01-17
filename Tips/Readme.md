@@ -64,5 +64,8 @@
 |[Product of sequence](TSql/ProductSequence.md)|A way to obtain an aggregation where the item are multiplication|
 |[Binary, Decimal, Hexadecimal conversion](TSql/ConversionDecimalBinaryHex.md)|Functions to convert Decimal, Binary, Hexadecimal number among them|
 |||
+|**TUNING**||
+|[CPU Used by databases](Tuning/CPUusedByDatabase.md)|CPU used by databases using Query Plan data using **sys.dm_exec_query_stats** and **sys.dm_exec_plan_attributes**|
+|||
 |**SSAS**|
 |[Tabular To Muldimensional](SSAS/ChangeEngineMultidimensionaleToTabular.md)|Steps to Change SSAS Engine from Tabular To Muldimensional|
