@@ -40,10 +40,17 @@
 |[Info Index](Index/Info_Index.md)|Returns the information about all Tables Indexes|
 |[Info Missing Index](Index/Info_MissingIndex.md)|Returns the information Missing Indexes using **sys.dm_db_missing_index_details**|
 |[Info Indexes Usage](Index/Info_IndexUsage.md)|Returns info about indexes usage using **sys.dm_db_index_usage_stats**|
+|[Info Indexes Usage and Fragmentation](Index/Info_IndexUsageAndFragmentation.md)|Returns info about indexes usage and fragmentation using **sys.dm_db_index_usage_stats** and **sys.dm_db_index_physical_stats**|
 |||
 |**COLUMNSTORE INDEX**|
 |[Info Rowstore](Index/Info_ColumnStoreIndex.md)|Returns the information about a Index's Rowstore Groups|
 |[Info Rowstore Groups](Index/Info_RowStoreGroups.md)|Returns the information about all Columnstore Index's Rowstore Groups Using **sys.dm_db_column_store_row_group_physical_stats**|
+|||
+|**DATA STRUCTURE**|
+|[Info Table](DeepOnDataStructure/InfoTable.md)|Info about Table's Size and number of Data Pages|
+|[Info Data Page](DeepOnDataStructure/InfoDataPage.md)|Get the list of all table's data pages|
+|[Info Row](DeepOnDataStructure/InfoRow.md)|Get the RowId of each record in a Table|
+|[Info IndexT Tree Level](DeepOnDataStructure/InfoIndexTreeLevel.md)|Return the Page Id of the  pages in Root and Intermediate levels of an index|
 |||
 |**SECURITY**||
 |[Info Users and Logins](Security/InfoUserLogins.md)|List of Logins and Users in a SQL Server instance|

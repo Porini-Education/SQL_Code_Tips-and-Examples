@@ -1,5 +1,7 @@
 # Info about Table's Size and number of Data Pages
 
+## Code
+
 ```SQL
 create view vInfoTableSize
 as
@@ -68,7 +70,7 @@ where
 GO
 ```
 
-Example
+## Example
 
 ``` SQL
 select * from util.vInfoTable where object_name ='Test01'; -- 1 Data Page, 7 rows
