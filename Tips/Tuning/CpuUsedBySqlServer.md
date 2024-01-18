@@ -1,4 +1,4 @@
-# Sql Server CPU usage in %
+# % of CPU used by Sql server using sys.dm_os_ring_buffers
 
 ``` SQL
 DECLARE @ts_now BIGINT

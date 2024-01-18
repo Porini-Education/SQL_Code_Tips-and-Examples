@@ -1,4 +1,4 @@
-# CPU used by databases using Query Plan data
+# CPU % and time used by databases using Query Plan data
 
 ```SQL
 WITH DB_CPU_Stats
