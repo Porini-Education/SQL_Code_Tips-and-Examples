@@ -65,8 +65,13 @@
 |[Binary, Decimal, Hexadecimal conversion](TSql/ConversionDecimalBinaryHex.md)|Functions to convert Decimal, Binary, Hexadecimal number among them|
 |||
 |**TUNING**||
+<<<<<<< HEAD
 |[CPU Used by Sql Server](Tuning/CPU_UsedBySqlServer.md)|% of CPU used by Sql server using **sys.dm_os_ring_buffers** |
 |[CPU Used by databases](Tuning/CPU_UsedByDatabase.md)|CPU used by databases using Query Plan data using **sys.dm_exec_query_stats** and **sys.dm_exec_plan_attributes**|
+=======
+|[CPU Used by Sql Server](Tuning/CPUUsedBySqlServer.md)|% of CPU used by Sql server using **sys.dm_os_ring_buffers** |
+|[CPU Used by databases](Tuning/CPUUsedByDatabase.md)|CPU used by databases using Query Plan data using **sys.dm_exec_query_stats** and **sys.dm_exec_plan_attributes**|
+>>>>>>> 3df7393f9344758d754b29b6dce32d8e45a46eb1
 |||
 |**SSAS**|
 |[Tabular To Muldimensional](SSAS/ChangeEngineMultidimensionaleToTabular.md)|Steps to Change SSAS Engine from Tabular To Muldimensional|
