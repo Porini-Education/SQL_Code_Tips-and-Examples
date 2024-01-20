@@ -1,4 +1,4 @@
-# <img src="https://github.com/Porini-Education/Code_Tips-and-Examples/assets/RGB_Badge_PIRC.png" width=90px> Tips and Examples
+# <img src="/assets/RGB_Badge_PIRC.png" width=90px> Tips and Examples
 
 Collection of SQL Server's code examples curated by **BU Education** in [Porini - Gruppo DGS](https://www.porini.it)
 
