@@ -67,6 +67,7 @@
 |**TUNING**||
 |[CPU Used by Sql Server](Tuning/CPU_UsedBySqlServer.md)|% of CPU used by Sql server using **sys.dm_os_ring_buffers** |
 |[CPU Used by databases](Tuning/CPU_UsedByDatabase.md)|CPU used by databases using Query Plan data using **sys.dm_exec_query_stats** and **sys.dm_exec_plan_attributes**|
+|[Total Wait Time](Tuning/TotalWaitingTime.md)|Total time spent waiting for CPU (signal waits) and the total time spent waiting for resources (resource waits) using **sys.dm_os_wait_stats**|
 |||
 |**SSAS**|
 |[Tabular To Muldimensional](SSAS/ChangeEngineMultidimensionaleToTabular.md)|Steps to Change SSAS Engine from Tabular To Muldimensional|
