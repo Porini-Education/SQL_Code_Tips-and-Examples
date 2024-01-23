@@ -1,6 +1,6 @@
 # Inport CSV files from Azure Container in a SQL Database
 
-This Techniques coukd be used both on premise and azure
+This Techniques could be used both on premise and azure
 
 ``` SQL
 use test

@@ -52,6 +52,8 @@
 |[Info Row](DeepOnDataStructure/InfoRow.md)|Get the RowId of each record in a Table|
 |[Info IndexT Tree Level](DeepOnDataStructure/InfoIndexTreeLevel.md)|Return the Page Id of the  pages in Root and Intermediate levels of an index|
 |||
+|**DISK**|
+|[Disks Latency](Disk/DiskLatency.md)|Measure, for each database files, the reading and writing disk latency|
 |**SECURITY**||
 |[Info Users and Logins](Security/InfoUserLogins.md)|List of Logins and Users in a SQL Server instance|
 |[Create a Login on Azure SQL Database](Security/CreationNewLoginSQLAzure.md)|Example code to create Logins and Users on an Azure Sql Database|
