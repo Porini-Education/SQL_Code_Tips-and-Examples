@@ -54,6 +54,8 @@
 |||
 |**DISK**|
 |[Disks Latency](Disk/DiskLatency.md)|Measure, for each database files, the reading and writing disk latency|
+|**MEMORY**|
+|[Database pages in memory](Memory/DBPagesInMemory.md)|Number of data pages in memory for each database using **sys.dm_os_buffer_descriptors**|
 |**SECURITY**||
 |[Info Users and Logins](Security/InfoUserLogins.md)|List of Logins and Users in a SQL Server instance|
 |[Create a Login on Azure SQL Database](Security/CreationNewLoginSQLAzure.md)|Example code to create Logins and Users on an Azure Sql Database|
