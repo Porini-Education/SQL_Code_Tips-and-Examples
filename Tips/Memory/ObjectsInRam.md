@@ -17,8 +17,6 @@ Returns:
 - IndexType: The type of the index.
 - ObjectType: The type of the object.
 
-Example usage:
-SELECT * FROM Untitled-1;
 */
 
 SELECT 
