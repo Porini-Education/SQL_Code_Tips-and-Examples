@@ -15,6 +15,7 @@
 |[Change Tracking](Database/Example_ChangeTracking.md)|Example of of how to set and use the Change Tracking|
 |**QUERY and Functions**|
 |[MERGE](Query/DML_MERGE.sql)|Show a complete example of how to use the `MERGE` statement|
+|[Import csv data from a Azure Container](Query/REST_AzureContainerImportAzureBlobCsv.md)| How to insert in a table csv data stored in a Azure Container using BULK INSERT |
 |[REST Azure Container](Query/REST_AzureContainer.md)| How to read a file stored in an Azure container |
 |[REST Azure FileShare](Query/REST_AzureFileShare.md)| How to deal with an Azure File Share: create, load, read, delete a file|
 |[REST all endpoint](Query/REST_ExternalResources.md)| How to reach any endpoint outside of the Azure infrastructure |
