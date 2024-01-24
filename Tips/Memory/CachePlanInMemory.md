@@ -1,6 +1,7 @@
 # Memory occupation by cache plans
 
 <https://www.sqlskills.com/blogs/kimberly/plan-cache-and-optimizing-for-adhoc-workloads/>
+
 <https://logicalread.com/sql-server-minimize-single-use-plans-tl01/#.Wa6HCOm6ypo>
 
 ``` SQL
