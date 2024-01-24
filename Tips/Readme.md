@@ -77,7 +77,7 @@
 |[Binary, Decimal, Hexadecimal conversion](TSql/ConversionDecimalBinaryHex.md)|Functions to convert Decimal, Binary, Hexadecimal number among them|
 |||
 |**T-SQL - Algorithmins**|
-|[Pearson Test](TSQL - Algorithms/Pearson.md)|Code for calculating the Pearson correlation coefficient|
+|[Pearson Test](TSQL-Algorithms/Pearson.md)|Code for calculating the Pearson correlation coefficient|
 |||
 |**SSAS**|
 |[Tabular To Muldimensional](SSAS/ChangeEngineMultidimensionaleToTabular.md)|Steps to Change SSAS Engine from Tabular To Muldimensional|
