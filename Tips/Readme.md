@@ -65,16 +65,19 @@
 |[List and fix OrphanUsers](Security/OrphanUsers.md)|Use of **sp_change_users_login** to fix Orphan Users|
 |[Rights View Database List](Security/VisibilityToOnlyADataBase.md)| Give to a User the right to see only one database |
 |||
-|**T-SQL**|
-|[Get Code of Objects](TSql/GetCodeObjects.md)|Query to get the code of views, functions..|
-|[Product of sequence](TSql/ProductSequence.md)|A way to obtain an aggregation where the item are multiplication|
-|[Binary, Decimal, Hexadecimal conversion](TSql/ConversionDecimalBinaryHex.md)|Functions to convert Decimal, Binary, Hexadecimal number among them|
-|||
 |**TUNING**||
 |[CPU Used by Sql Server](Tuning/CPU_UsedBySqlServer.md)|% of CPU used by Sql server using **sys.dm_os_ring_buffers** |
 |[CPU Used by databases](Tuning/CPU_UsedByDatabase.md)|CPU used by databases using Query Plan data using **sys.dm_exec_query_stats** and **sys.dm_exec_plan_attributes**|
 |[Total Wait Time](Tuning/TotalWaitingTime.md)|Total time spent waiting for CPU (signal waits) and the total time spent waiting for resources (resource waits) using **sys.dm_os_wait_stats**|
 |[Top Queries by CPU](Tuning/TopQueryByCPU.md)|List of Query most expensive in term of CPU using **sys.dm_exec_query_stats** and **query_stats.query_hash**|
+|||
+|**T-SQL**|
+|[Get Code of Objects](TSql/GetCodeObjects.md)|Query to get the code of views, functions..|
+|[Product of sequence](TSql/ProductSequence.md)|A way to obtain an aggregation where the item are multiplication|
+|[Binary, Decimal, Hexadecimal conversion](TSql/ConversionDecimalBinaryHex.md)|Functions to convert Decimal, Binary, Hexadecimal number among them|
+|||
+|**T-SQL - Algorithmins**|
+|[Pearson Test](TSQL - Algorithms/Pearson.md)|Code for calculating the Pearson correlation coefficient|
 |||
 |**SSAS**|
 |[Tabular To Muldimensional](SSAS/ChangeEngineMultidimensionaleToTabular.md)|Steps to Change SSAS Engine from Tabular To Muldimensional|
