@@ -58,6 +58,7 @@
 |[Database pages in memory](Memory/DBPagesInMemory.md)|Number of data pages in memory for each database using **sys.dm_os_buffer_descriptors**|
 |[Objects in memory](Memory/ObjectsInRam.md)|Number of cached pages for each object and index of currente datbase, and provides additional details such as the object name, index name, index type, and object type. Use **sys.dm_os_buffer_descriptors** and sys.allocation_units, sys.partitions, sys.objects, and sys.indexes|
 |[Memory occupation by cache plans](Memory/CachePlanInMemory.md)|Quantity of memory occupied by cache plan group by plan type e object type using **sys.dm_exec_cached_plans**|
+|[Hoc Queries Execution Plans in Cache](Memory/HocQueriesPlanInCache.md)|retrieve information about ad hoc queries that have been cached by SQL Server using **sys.dm_exec_cached_plans**|
 |**SECURITY**||
 |[Info Users and Logins](Security/InfoUserLogins.md)|List of Logins and Users in a SQL Server instance|
 |[Create a Login on Azure SQL Database](Security/CreationNewLoginSQLAzure.md)|Example code to create Logins and Users on an Azure Sql Database|
