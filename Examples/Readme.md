@@ -22,6 +22,7 @@
 |[Time Zones](Query/Example_At_Time_Zone.sql)|Example to use timezones|
 |[Bit Manipulation](Query/BitManipulationFunctions.md) | TSQL Function to read, wrie and count bits in a integer or a binary value  |
 |[Temporal Table](Query/TemporalTable.md)|The temporal table allows you to natively implement a temporal version of the system allowing you to retrieve data at a certain point in time |
+|[Rollback If Error](Query/AutomaticRollBackIfError.md)|Two ways to assure a rollback in case of an error|
 |[New TSQL Functions in SQL 2022](Query/TSQL-2022.md) | What's new in SQL Server 2022 |
 |**SECURITY**|
 |[Dynamic Data Masking](Security/DynamicDataMasking.md)|Dynamic Data Masking limit data exposure by masking it to nonprivileged users |
