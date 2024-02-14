@@ -64,4 +64,5 @@ select * from #t
 In both case an error is generated but the rollback cancel the truncate and the table doesn't lose the data
 
 ![Alt text](../Assets/RollBack01.png)
+
 ![Alt text](../Assets/RollBack02.png)
