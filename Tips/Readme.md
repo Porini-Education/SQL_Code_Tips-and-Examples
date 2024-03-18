@@ -22,7 +22,7 @@
 |**DATABASE**|
 |[Info Databases](Database/Info_Database.sql)|Returns the attributes of all databases of the instance and the info about the last backup|
 |[Info DB Files](Database/Info_DB_Files.sql)|It retrieves the features of the database in the current instance|
-|[Info Total Space Used](Database/Total SpaceUsed.sql)|Total space used by a different type of object in the databases|
+|[Info Total Space Used](Database/Total_SpaceUsed.md)|Total space used by a different type of object in the databases|
 |[Info Database Object](Database/Info_Database_Object.md)|List of UserTable or View in a single database|
 |[Last execution time of store procedures](Database/LastStoreProcedureExecution.md)|List of last store procedures's execution time|
 |[Database Backups History](Database/DatabaseBackupHistory.md)|List the times of all db's backups|
