@@ -1,7 +1,7 @@
 
 # Return Easter's date for a specific year
 
-This function implements the algorithm by Johann Carl Friedrich Gauss (1777-1855) to calculate the date of Easter Sunday for a given year:
+This function implements the algorithm by Johann Carl Friedrich Gauss (1777-1855) to calculate the date of Easter Sunday for a given year.
 
 ```sql
 CREATE FUNCTION dbo.GetEasterDate(@year int)
