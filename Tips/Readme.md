@@ -5,7 +5,7 @@
 |**UTILITY**|
 |[Table of Numbers](Utility/TableOfNumbers.md)|Creation of a Table of Numbers|
 |[Get Internal Unique Record ID](Utility/GetInternalRecordId.md)|Use of undocumented functions **%%physloc%%**  and **sys.fn_PhysLocFormatter** to get the ID of a record.Useful to remove duplicate records.|
-|[Get Easter Date](Utility/GetInternalRecordId.md) | A function to obtain Easter'sd date of a specific year|
+|[Get Easter Date](Utility/GetEasterDate.md) | A function to obtain Easter'sd date of a specific year|
 |**INSTANCE**|
 |[Info Instance](Instance/Info_Instance.md)|Get the information about instance|
 |[Active Sessions](Instance/Active_Sessions.sql)|Allow you to describe the active session, and transaction, on a specific database or on the instance|
