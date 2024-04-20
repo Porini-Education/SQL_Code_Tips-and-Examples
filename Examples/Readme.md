@@ -16,6 +16,7 @@
 |**QUERY and Functions**|
 |[MERGE](Query/DML_MERGE.sql)|Show a complete example of how to use the `MERGE` statement|
 |[Update in Chunk](Query/UpdateInChunks.md)|Using a loop to update rows in a table in batches, with a delay between each batch|
+|[Use of Json Functions](Query/ExampleJsonQuery2.md)|Getting from a Json that contains data about exams a row for each exam with Name, Surname of person and Exam Name and Date Example: getting from a Json that contains data about exams a row for each exam with Name, Surname of person and Exam Name and Date|
 |[Import csv data from a Azure Container](Query/REST_AzureContainerImportAzureBlobCsv.md)| How to insert in a table csv data stored in a Azure Container using BULK INSERT |
 |[REST Azure Container](Query/REST_AzureContainer.md)| How to read a file stored in an Azure container |
 |[REST Azure FileShare](Query/REST_AzureFileShare.md)| How to deal with an Azure File Share: create, load, read, delete a file|
