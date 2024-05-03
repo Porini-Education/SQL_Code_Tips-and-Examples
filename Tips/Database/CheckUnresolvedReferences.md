@@ -5,13 +5,15 @@ To check for unresolved references in views, functions, or stored procedures in 
 If referenced_id IS NULL or is_ambiguous = 0  then there is a unresolved reference in this object.
 
 ``` SQL
-SELECT 
+SELECT
+    OBJECT_SCHEMA_NAME(referencing_id) AS referencing_object_schema,
     OBJECT_NAME(referencing_id) AS referencing_object_name,
+    OBJECTPROPERTYEX(referencing_id, 'BaseType') AS referencing_object_type,
     referenced_database_name,
     referenced_schema_name,
     referenced_entity_name
     --,*
-FROM 
+FROM
     sys.sql_expression_dependencies
 WHERE 
     is_ambiguous = 0  
