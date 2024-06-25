@@ -79,6 +79,7 @@
 |[Get Code of Objects](TSql/GetCodeObjects.md)|Query to get the code of views, functions..|
 |[Product of sequence](TSql/ProductSequence.md)|A way to obtain an aggregation where the item are multiplication|
 |[Binary, Decimal, Hexadecimal conversion](TSql/ConversionDecimalBinaryHex.md)|Functions to convert Decimal, Binary, Hexadecimal number among them|
+|[Capitalize First Letter of every words of string](TSql/CapitalizeFirstLetter.md)|Function to Capitalize First Letter of every words of string|
 |||
 |**T-SQL - Algorithmins**|
 |[Pearson Test](TSQL-Algorithms/Pearson.md)|Code for calculating the Pearson correlation coefficient|
