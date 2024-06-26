@@ -15,6 +15,7 @@
 |[Change Tracking](Database/Example_ChangeTracking.md)|Example of of how to set and use the Change Tracking|
 |**QUERY and Functions**|
 |[MERGE](Query/DML_MERGE.sql)|Show a complete example of how to use the `MERGE` statement|
+|[Update with Join](Query/UpdateWithJoin.md)| An Example to update a table with the values of another table using a join|
 |[Update in Chunk](Query/UpdateInChunks.md)|Using a loop to update rows in a table in batches, with a delay between each batch|
 |[Use of Json Functions](Query/ExampleJsonQuery2.md)|Getting from a Json that contains data about exams a row for each exam with Name, Surname of person and Exam Name and Date Example: getting from a Json that contains data about exams a row for each exam with Name, Surname of person and Exam Name and Date|
 |[Import csv data from a Azure Container](Query/REST_AzureContainerImportAzureBlobCsv.md)| How to insert in a table csv data stored in a Azure Container using BULK INSERT |
