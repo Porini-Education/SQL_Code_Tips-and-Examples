@@ -2,6 +2,8 @@
 
 |Task|Description|
 |---|---|
+|**ERROR**|
+|[Installation Error](InstallationError/InstallationDiskSector.md)|Resolve the installation Error caused by the Disk Sector Size|
 |**UTILITY**|
 |[Table of Numbers](Utility/TableOfNumbers.md)|Creation of a Table of Numbers|
 |[Get Internal Unique Record ID](Utility/GetInternalRecordId.md)|Use of undocumented functions **%%physloc%%**  and **sys.fn_PhysLocFormatter** to get the ID of a record.Useful to remove duplicate records.|
