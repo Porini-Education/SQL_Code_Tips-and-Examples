@@ -1,4 +1,4 @@
-# Info Instnce
+# Info Instance
 
 Get the basic information about the istance
 
